@@ -1,0 +1,56 @@
+<%-include ("partials/header.ejs") %>
+
+
+<section class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.82057519608!2d103.82768367059329!3d1.2937135174205574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da198de9aaaabb%3A0x996bdb092f510665!2sION%20Orchard!5e0!3m2!1sen!2ssg!4v1702715054598!5m2!1sen!2ssg" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+</section>
+
+<section class="contact-us">
+
+    <div class="row contact-row">
+
+        <div class="contact-col">
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>XYZ Road, ABC Building</h5>
+                    <p>Singapore 147284</p>
+                </span>
+            </div>
+        
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+65 8230 XXXX</h5>
+                    <p>Monday - Friday, 10am - 7pm</p>
+                </span>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <span>
+                    <h5>info@leaf-it.com</h5>
+                    <p>Email us your queries</p>
+                </span>
+            </div>
+
+        </div>
+    
+
+    <div class="contact-col">
+        <form action="form-handler.php" method="post">
+            <input type="text" name="name" placeholder="Enter your Name" required>
+            <input type="email" name="email" placeholder="Enter your Email" required>
+            <input type="text" name="subject" placeholder="Enter your Subject" required>
+            <textarea rows="3" name="message" required placeholder="Enter Text Here:"></textarea>
+            <button type="submit" class="link-btn">Send Message</button>
+
+        </form>
+
+</div>
+
+
+</section>
+
+
+<%-include ("partials/footer.ejs") %>

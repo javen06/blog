@@ -1,0 +1,59 @@
+<%- include("partials/header.ejs") %>
+
+<section class="main-page">
+    <div class="slogan container">
+        <h1>LEAF-IT HERE!</h1>
+    </div>
+    <div class="slogan-p container">
+        <p id="slogan-p1">"Take a Pause, Leaf a Thought" </p>
+        <p id="slogan-p2">Take a break amidst the hustle and bustle of the journey we call life. <br> Leave behind your thoughts, memories, expressions like leaves falling from a tree.</p>
+    </div>
+
+    <% console.log(posts) %>
+
+    <!--
+    <% posts.forEach((post)=>{ %>
+        <h1><%= post.title %></h1>
+        <p><%= post.content %></p>
+        <img src="<%= post.img %>" alt="">
+    <% }); %>
+    -->
+</section>
+
+<% let examplesTitles = ["Our Earth", "This Christmas", "About Life"]; %>
+
+<% let examplesContent = [
+    "Our planet is definitely a priceless gift from God. It is the principal source of all essential nutrients for all living things on the planet. Earth provides everything we need, including the food we eat, the clothes we wear, and the home we live in. Earth is known as 'Mother Earth,' because, like our mother, she is always nursing us and providing for all of our needs. We would not be alive if it weren't for the earth. Humans gain enormously from the earth's health benefits.",
+    "Christmas is a vibrant and popular festival celebrated around the world. Christmas is celebrated on December 25 every year. We visit our friends and relatives during the Christmas holidays and have lots of fun. My brother and I always wait for the Christmas vacation because it is filled with joy and sweet treats.",
+    "The type of person that you believe that you are and the type of things that you believe you are capable of — in other words, your identity — is what determines the actions you perform. The limitations in your life are framed by the box of your mind. If you want a new life, then start building a new identity. Start small. Prove your new identity to yourself in a thousand tiny ways. Soon it will become real in a thousand big ways."
+]; %>
+
+<section>
+    <div class="jumbotron">
+            <div class="trending">TRENDING:</div>
+            <% examplesTitles.forEach((title, index) => { %>
+                <div class="container public">
+                    <h1 class="display-5 fw-bold"><%= title %></h1>
+                    <p class="col-md-10">
+                        <% if (examplesContent[index].length > 100) { %>
+                            <%= examplesContent[index].substring(0, 100) + '...' %>
+                            
+                        <% } else { %>
+                            <%= examplesContent[index] %>
+                        <% } %>
+                    </p>
+                    <button class="link-btn">
+                        <a href="/publicPosts/<%= title %>" class="btn btn-link">View Post</a>
+                    </button>
+                </div>
+            <% }) %>
+    </div>
+</section>
+
+
+
+
+
+<%- include("partials/footer.ejs") %>
+
+

@@ -1,0 +1,58 @@
+<!-- post.ejs -->
+<%- include("partials/header.ejs") %>
+
+<div class="jumbotron">
+
+    <% if (posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+            <div class="container public <%= individualPost ? 'no-hover-effect' : '' %> " id="post-<%=post.title%>">
+                
+                <h1 class="display-5 fw-bold"><%= post.title %></h1>
+                <p class="col-md-10  content-p">
+
+                    <% if (post.content.length > 100 && !individualPost) { %>
+                        <%= post.content.substring(0, 100) + '...' %>
+                    <% } else { %>
+                        <%= post.content %>
+                    <% } %>
+
+                </p>
+
+                <% if (!individualPost) { %>
+                    <button class="link-btn">
+                        <a href="/post/<%=post.title%>" class="btn btn-link">View Post</a>
+                    </button>
+
+                <% } else { %>
+
+                    <div class="btn-container">
+
+                        <button class="edit link-btn">
+                            <a href="/edit/<%=post.title%>" class="edit-btn btn btn-link">Edit</a>
+                        </button>
+
+                        <!-- Add this form inside the loop in your post.ejs -->
+                        <form id="deleteForm-<%=post.title%>" action="/post/<%=post.title%>" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                            <!-- Use a hidden input field to simulate DELETE method -->
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="delete-btn edit link-btn">Delete</button>
+                        </form>
+
+                        <button class="edit link-btn">
+                            <a href="/post" class="edit-btn btn btn-link">Back</a>
+                        </button>
+
+                    </div>
+
+                <% } %>
+
+            </div>
+        <% }); %>
+
+    <% } else { %>
+        <p id="no-post">NO POSTS FOUND</p>
+    <% } %>
+
+</div>
+
+<%- include("partials/footer.ejs") %>
