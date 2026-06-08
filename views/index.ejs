@@ -9,15 +9,6 @@
         <p id="slogan-p2">Take a break amidst the hustle and bustle of the journey we call life. <br> Leave behind your thoughts, memories, expressions like leaves falling from a tree.</p>
     </div>
 
-    <% console.log(posts) %>
-
-    <!--
-    <% posts.forEach((post)=>{ %>
-        <h1><%= post.title %></h1>
-        <p><%= post.content %></p>
-        <img src="<%= post.img %>" alt="">
-    <% }); %>
-    -->
 </section>
 
 <% let examplesTitles = ["Our Earth", "This Christmas", "About Life"]; %>
@@ -43,7 +34,7 @@
                         <% } %>
                     </p>
                     <button class="link-btn">
-                        <a href="/publicPosts/<%= title %>" class="btn btn-link">View Post</a>
+                        <a href="/public-posts/<%= encodeURIComponent(title) %>" class="btn btn-link">View Post</a>
                     </button>
                 </div>
             <% }) %>
@@ -55,5 +46,4 @@
 
 
 <%- include("partials/footer.ejs") %>
-
 

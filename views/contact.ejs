@@ -38,7 +38,10 @@
     
 
     <div class="contact-col">
-        <form action="form-handler.php" method="post">
+        <% if (submitted) { %>
+            <p class="alert alert-success">Thanks for reaching out. This demo recorded the submission for the current request only.</p>
+        <% } %>
+        <form action="/contact" method="post">
             <input type="text" name="name" placeholder="Enter your Name" required>
             <input type="email" name="email" placeholder="Enter your Email" required>
             <input type="text" name="subject" placeholder="Enter your Subject" required>

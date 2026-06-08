@@ -6,18 +6,15 @@
 <div class="container">
 
     <h1 id="post-h1">Edit:</h1>
-    <form action="/edit/<%= post.title %>" method="POST" class="posts-title">
+    <form action="/post/<%= post.id %>?_method=PUT" method="POST" class="posts-title">
 
         <div class="form-group">
 
-            <label for="">Title:</label>
-            <input class="form-control" type="text" name="postTitle" value="<%= post.title %>">
+            <label for="post-title">Title:</label>
+            <input class="form-control" id="post-title" type="text" name="postTitle" value="<%= post.title %>" required>
 
-            <label for="">Post:</label>
-            <textarea class="form-control" name="postBody" id="" cols="30" rows="5"><%= post.content %></textarea>
-            
-            <label for="">Upload Image:</label>
-            <input class="img form-control" type="file" name="postImage" accept="image/*">
+            <label for="post-body">Post:</label>
+            <textarea class="form-control" name="postBody" id="post-body" cols="30" rows="5" required><%= post.content %></textarea>
 
         
             <button type="submit">Save Changes</button>
